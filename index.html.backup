@@ -202,52 +202,39 @@
         }
 
         .title {
-            font-size: 24px;
-            color: #00d9ff;
-            text-shadow: 0 0 10px rgba(0, 217, 255, 0.8);
+            font-size: 20px;
+            color: #ffa500;
+            text-shadow: 2px 2px 0px #000;
             display: flex;
             align-items: center;
             gap: 15px;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            font-weight: 700;
         }
 
         .coin-counter {
-            background: rgba(0, 217, 255, 0.05);
-            border: 1px solid rgba(0, 217, 255, 0.3);
+            background: #1a1a1a;
+            border: 4px solid #ffa500;
             padding: 10px 20px;
-            font-size: 16px;
-            box-shadow:
-                0 0 15px rgba(0, 217, 255, 0.2),
-                inset 0 0 10px rgba(0, 217, 255, 0.1);
+            font-size: 14px;
+            box-shadow: inset 0 0 10px rgba(255, 165, 0, 0.3);
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #00ff88;
-            font-weight: 700;
-            letter-spacing: 2px;
+            color: #ffa500;
         }
 
         .coin-icon {
-            width: 20px;
-            height: 20px;
-            background: radial-gradient(circle, #00ff88 0%, #00d9ff 100%);
-            border: 2px solid #00d9ff;
+            width: 24px;
+            height: 24px;
+            background: #ff6b6b;
+            border: 3px solid #000;
             border-radius: 50%;
-            animation: pulse-glow 2s ease-in-out infinite;
-            box-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+            animation: spin 2s linear infinite;
         }
 
-        @keyframes pulse-glow {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
-            }
-            50% {
-                transform: scale(1.1);
-                box-shadow: 0 0 20px rgba(0, 255, 136, 1);
-            }
+        @keyframes spin {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
         }
 
         .stats-grid {
@@ -258,41 +245,35 @@
         }
 
         .stat-card {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(10, 14, 39, 0.8) 100%);
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            border-top: 2px solid #00d9ff;
-            padding: 25px 20px;
+            background: #3a3a3a;
+            border: 4px solid #1a1a1a;
+            border-left: 4px solid #ffa500;
+            padding: 20px;
             text-align: center;
             position: relative;
-            transition: all 0.3s;
-            box-shadow:
-                0 0 20px rgba(0, 217, 255, 0.1),
-                inset 0 0 20px rgba(0, 217, 255, 0.05);
-            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            transition: transform 0.2s;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
         }
 
         .stat-card:hover {
-            transform: translateY(-5px);
-            border-top-color: #00ff88;
-            box-shadow:
-                0 5px 30px rgba(0, 217, 255, 0.3),
-                inset 0 0 30px rgba(0, 217, 255, 0.1);
+            transform: translateY(-2px);
+            border-left-color: #ffcc00;
         }
 
-        .stat-card::before {
+        .stat-card::after {
             content: '';
             position: absolute;
-            top: -2px;
+            bottom: 0;
             left: 0;
             right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent 0%, #00d9ff 50%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .stat-card:hover::before {
-            opacity: 1;
+            height: 3px;
+            background: repeating-linear-gradient(
+                90deg,
+                #ffa500 0px,
+                #ffa500 5px,
+                transparent 5px,
+                transparent 10px
+            );
         }
 
         .stat-icon {
@@ -301,33 +282,27 @@
         }
 
         .stat-value {
-            font-size: 42px;
-            color: #00ff88;
-            margin: 15px 0;
-            text-shadow: 0 0 15px rgba(0, 255, 136, 0.8);
-            font-weight: 900;
-            letter-spacing: 2px;
+            font-size: 32px;
+            color: #ffa500;
+            margin: 10px 0;
+            text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
         }
 
         .stat-label {
-            font-size: 10px;
-            color: #00d9ff;
+            font-size: 9px;
+            color: #999;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 500;
+            letter-spacing: 2px;
         }
 
         .job-card {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.03) 0%, rgba(10, 14, 39, 0.9) 100%);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            border-left: 2px solid #00d9ff;
-            margin-bottom: 20px;
+            background: #3a3a3a;
+            border: 4px solid #1a1a1a;
+            margin-bottom: 15px;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
-            box-shadow:
-                0 0 15px rgba(0, 217, 255, 0.1),
-                inset 0 0 30px rgba(0, 217, 255, 0.03);
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.5);
         }
 
         .job-card::before {
@@ -335,28 +310,20 @@
             position: absolute;
             top: 0;
             left: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, #00d9ff 0%, transparent 100%);
-            opacity: 0.5;
-        }
-
-        .job-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, #00d9ff 0%, transparent 50%);
+            width: 8px;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                #ffa500 0px,
+                #ffa500 10px,
+                #000 10px,
+                #000 20px
+            );
         }
 
         .job-card:hover {
-            border-left-color: #00ff88;
-            box-shadow:
-                0 0 30px rgba(0, 217, 255, 0.2),
-                inset 0 0 40px rgba(0, 217, 255, 0.05);
-            transform: translateX(2px);
+            transform: translateX(3px);
+            box-shadow: inset 0 0 40px rgba(255, 165, 0, 0.2);
         }
 
         .job-header {
@@ -466,52 +433,47 @@
         }
 
         .health-bar-inner.running {
-            background: linear-gradient(90deg, #00d9ff 0%, #0099cc 100%);
-            animation: slide 1s linear infinite, pulse-bar 2s ease-in-out infinite;
-            box-shadow:
-                0 0 15px rgba(0, 217, 255, 0.6),
-                inset 0 0 10px rgba(255, 255, 255, 0.2);
-            position: relative;
-        }
-
-        .health-bar-inner.running::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
-            animation: shimmer 2s linear infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        @keyframes pulse-bar {
-            0%, 100% { opacity: 0.9; }
-            50% { opacity: 1; }
+            background: repeating-linear-gradient(
+                45deg,
+                #ffa500,
+                #ffa500 8px,
+                #ff8c00 8px,
+                #ff8c00 16px
+            );
+            animation: slide 1s linear infinite;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
         }
 
         .health-bar-inner.completed {
-            background: linear-gradient(90deg, #00ff88 0%, #00cc66 100%);
-            box-shadow:
-                0 0 15px rgba(0, 255, 136, 0.6),
-                inset 0 0 10px rgba(255, 255, 255, 0.2);
+            background: repeating-linear-gradient(
+                45deg,
+                #4CAF50,
+                #4CAF50 8px,
+                #45a049 8px,
+                #45a049 16px
+            );
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
         }
 
         .health-bar-inner.failed {
-            background: linear-gradient(90deg, #ff3366 0%, #cc0033 100%);
-            box-shadow:
-                0 0 15px rgba(255, 51, 102, 0.6),
-                inset 0 0 10px rgba(255, 255, 255, 0.1);
+            background: repeating-linear-gradient(
+                45deg,
+                #d32f2f,
+                #d32f2f 8px,
+                #c62828 8px,
+                #c62828 16px
+            );
+            box-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
         }
 
         .health-bar-inner.pending {
-            background: linear-gradient(90deg, #666 0%, #444 100%);
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            background: repeating-linear-gradient(
+                45deg,
+                #666,
+                #666 8px,
+                #555 8px,
+                #555 16px
+            );
         }
 
         @keyframes slide {
@@ -540,34 +502,29 @@
         }
 
         .status-badge.running {
-            background: rgba(0, 217, 255, 0.2);
-            color: #00d9ff;
-            border: 1px solid #00d9ff;
-            box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
-            text-shadow: 0 0 5px rgba(0, 217, 255, 0.8);
+            background: #ffa500;
+            color: #1a1a1a;
+            border-color: #ff8c00;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
         }
 
         .status-badge.completed {
-            background: rgba(0, 255, 136, 0.2);
-            color: #00ff88;
-            border: 1px solid #00ff88;
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
-            text-shadow: 0 0 5px rgba(0, 255, 136, 0.8);
+            background: #4CAF50;
+            color: #fff;
+            border-color: #45a049;
         }
 
         .status-badge.failed {
-            background: rgba(255, 51, 102, 0.2);
-            color: #ff3366;
-            border: 1px solid #ff3366;
-            box-shadow: 0 0 15px rgba(255, 51, 102, 0.4);
-            text-shadow: 0 0 5px rgba(255, 51, 102, 0.8);
+            background: #d32f2f;
+            color: #fff;
+            border-color: #c62828;
             animation: shake 0.5s infinite;
         }
 
         .status-badge.pending {
-            background: rgba(102, 102, 102, 0.2);
-            color: #999;
-            border: 1px solid #666;
+            background: #666;
+            color: #ccc;
+            border-color: #555;
         }
 
         @keyframes pulse-badge {
@@ -719,32 +676,16 @@
         }
 
         .pixel-divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent 0%, #00d9ff 50%, transparent 100%);
-            margin: 30px 0;
-            box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
-            position: relative;
-        }
-
-        .pixel-divider::before,
-        .pixel-divider::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 10px;
-            height: 10px;
-            background: #00d9ff;
-            box-shadow: 0 0 10px rgba(0, 217, 255, 0.8);
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-        }
-
-        .pixel-divider::before {
-            left: 0;
-        }
-
-        .pixel-divider::after {
-            right: 0;
+            height: 8px;
+            background: repeating-linear-gradient(
+                45deg,
+                #ffa500,
+                #ffa500 10px,
+                #000 10px,
+                #000 20px
+            );
+            margin: 25px 0;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
         }
 
         @media (max-width: 768px) {
@@ -769,25 +710,11 @@
     </style>
 </head>
 <body>
-    <!-- Radar Display -->
-    <div class="radar-container">
-        <div class="radar">
-            <div class="radar-circles">
-                <div class="radar-circle"></div>
-                <div class="radar-circle"></div>
-                <div class="radar-circle"></div>
-            </div>
-            <div class="radar-crosshair"></div>
-            <div class="radar-crosshair"></div>
-        </div>
-        <div class="radar-status">SYSTEM ONLINE</div>
-    </div>
-
     <div class="container">
         <div class="header">
             <div class="header-content">
                 <div class="title">
-                    <span>NOVA SYSTEM</span>
+                    <span>⚙️ BUILD MONITOR</span>
                 </div>
                 <div class="coin-counter">
                     <div class="coin-icon"></div>
