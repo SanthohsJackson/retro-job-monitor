@@ -1,0 +1,39 @@
+# Dependencies
+node_modules
+npm-debug.log
+
+# Database (will be volume mounted)
+database/*.db
+database/*.db-journal
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentation
+README.md
+
+# Logs
+logs
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local

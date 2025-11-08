@@ -1,0 +1,30 @@
+{
+  "name": "retro-job-monitor",
+  "version": "1.0.0",
+  "description": "A retro game-inspired job monitoring system with SQLite database and REST API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "job-monitor",
+    "retro",
+    "ui",
+    "real-time",
+    "dashboard",
+    "game-ui",
+    "sqlite",
+    "express",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
